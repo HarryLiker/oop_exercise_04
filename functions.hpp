@@ -1,7 +1,12 @@
 # pragma once
+#include <tuple>
+
+using namespace std;
 
 template <class T> 
-print();
+void print(tuple<T> t) {
+    
+}
 
 template <class T>
-square();
+void square() {}
