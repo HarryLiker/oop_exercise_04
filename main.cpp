@@ -43,7 +43,13 @@ int main() {
     tuple {quadre1, quadre2, rectangle1, rectangle2, trapeze1, trapeze2};
     print_tuple<decltype(tuple),0>(tuple);
 
-    //std::cout << "Total square of tuple: " << square_tuple<decltype(tuple),0>(tuple) << std::endl;
+    Quadrate<int> qr;
+    qr.Center = {0, 0};
+    qr.Side = 5;
+
+    //square(qr);
+    std::cout << square(trapeze2);
+    std::cout << "Total square of tuple: " << tuple_square<decltype(tuple),0>(tuple) << std::endl;
 
     //print(10, 20);
     //print(100, 200, 300);

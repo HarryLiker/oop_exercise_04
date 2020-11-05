@@ -101,6 +101,32 @@ template <class T> typename std::enable_if<(sizeof(T::UpperSide, T::DownSide, T:
     std::cout << std::endl;
 }
 
+template <class T>
+double square(const Quadrate<T> &figure) {
+    return (figure.Side * figure.Side);
+}
+
+template <class T>
+double square(const Rectangle<T> &figure) {
+    return (figure.Side1 * figure.Side2);
+}
+
+template <class T>
+double square(const Trapeze<T> &figure) {
+    return (figure.UpperSide + figure.DownSide) / 2.0 * figure.Height;
+}
+
+template <class T, size_t index = 0>
+double tuple_square(T& tuple) {
+    if constexpr (index < std::tuple_size<T>::value) {
+        return (double)square(std::get<index>(tuple)) + tuple_square<T, index + 1>(tuple);
+    }
+    else {
+        return 0;
+    }
+}
+
+
 /*
 // Площадь tuple
 template <class T, size_t index> double square_tuple(T& tuple) {
