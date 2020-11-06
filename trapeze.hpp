@@ -3,6 +3,8 @@
 
 template<class T>
 struct Trapeze {
+    Trapeze() {}
+    Trapeze(std::pair<T,T> center, T upper_side, T down_side, T height): Center(center), UpperSide(upper_side), DownSide(down_side), Height(height) {}
     std::pair<T,T> Center;
     T UpperSide;
     T DownSide;
@@ -18,7 +20,7 @@ void check_figure(Trapeze<T> figure) {
     }
 }
 
-// Вывод Трапеции
+// Trapeze print
 template <class T> 
 void print(Trapeze<T>& figure) {
     check_figure(figure); 
@@ -30,7 +32,7 @@ void print(Trapeze<T>& figure) {
     std::cout << std::endl;
 }
 
-// Площадь для трапеции 
+// Square of trapeze 
 template <class T>
 double square(const Trapeze<T> &figure) {
     check_figure(figure); 

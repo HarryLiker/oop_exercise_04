@@ -5,42 +5,24 @@
 #include "trapeze.hpp"
 #include "tuple.hpp"
 
-using namespace std;
-
 int main() {
-    Quadrate<int> quadre1;
-    quadre1.Center = {0, 0};
-    quadre1.Side = 4;
+    Quadrate<int> quadre1({0, 0}, 4);
 
-    Quadrate<double> quadre2;
-    quadre2.Center = {0.35, 10.5};
-    quadre2.Side = 8;
+    Quadrate<double> quadre2({0.35, 10.5}, 8);
 
-    Rectangle<int> rectangle1;
-    rectangle1.Center = {25, 100};
-    rectangle1.Length = 25;
-    rectangle1.Width = 100;
+    Rectangle<int> rectangle1({25, 100}, 25, 100);
 
-    Rectangle<double> rectangle2;
-    rectangle2.Center = {45.85, 36.9};
-    rectangle2.Length = 56.7;
-    rectangle2.Width = 1003.3;
+    Rectangle<double> rectangle2({45.85, 36.9}, 56.7, 1003.3);
 
-    Trapeze<int> trapeze1;
-    trapeze1.Center = {1000, -86};
-    trapeze1.DownSide = 100;
-    trapeze1.UpperSide = 5;
-    trapeze1.Height = 56;
-    
-    Trapeze<double> trapeze2;
-    trapeze2.Center = {-9.85, -34.8};
-    trapeze2.DownSide = 89.5;
-    trapeze2.UpperSide = 100.2;
-    trapeze2.Height = 2.7;
+    Trapeze<int> trapeze1({1000, -86}, 5, 100, 56);
 
+    Trapeze<double> trapeze2({-9.85, -34.8}, 100.2, 89.5, 2.7);
+
+    // Filling std::tuple by figures
     std::tuple<decltype(quadre1), decltype(quadre2), decltype(rectangle1), decltype(rectangle2), decltype(trapeze1), decltype(trapeze2)> 
     tuple {quadre1, quadre2, rectangle1, rectangle2, trapeze1, trapeze2};
 
+    // Print coordinates of figures in tuple 
     print_tuple<decltype(tuple),0>(tuple);
 
     std::cout << "Total square of tuple: " << tuple_square<decltype(tuple),0>(tuple) << std::endl;

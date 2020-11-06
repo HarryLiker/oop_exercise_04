@@ -3,6 +3,8 @@
 
 template <class T>
 struct Quadrate {
+    Quadrate() {}
+    Quadrate(std::pair<T,T> center, T side): Center(center), Side(side) {}
     std::pair<T,T> Center;
     T Side;
 };
@@ -16,7 +18,7 @@ void check_figure(Quadrate<T> figure) {
     }
 }
 
-// Вывод Квадрата
+// Quadrate print
 template <class T> 
 void print(Quadrate<T>& figure) {
     check_figure(figure); 
@@ -28,7 +30,7 @@ void print(Quadrate<T>& figure) {
     std::cout << std::endl;
 }
 
-// Площадь для квадрата
+// Square of quadrate
 template <class T>
 double square(const Quadrate<T> &figure) {
     check_figure(figure); 

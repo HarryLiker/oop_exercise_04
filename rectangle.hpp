@@ -3,6 +3,8 @@
 
 template<class T>
 struct Rectangle {
+    Rectangle() {}
+    Rectangle(std::pair<T,T> center, T length, T width): Center(center), Length(length), Width(width) {}
     std::pair<T,T> Center;
     T Length;
     T Width;
@@ -17,7 +19,7 @@ void check_figure(Rectangle<T> figure) {
     }
 }
 
-// Вывод Прямоугольника
+// Rectangle print
 template <class T> 
 void print(Rectangle<T>& figure) {
     check_figure(figure); 
@@ -29,7 +31,7 @@ void print(Rectangle<T>& figure) {
     std::cout << std::endl;
 }
 
-// Площадь для прямоугольника
+// Square of rectangle
 template <class T>
 double square(const Rectangle<T> &figure) {
     check_figure(figure); 
