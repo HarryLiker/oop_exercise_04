@@ -8,8 +8,6 @@
 using namespace std;
 
 int main() {
-    //tuple<Quadrate, Rectangle, Trapeze> a();
-    //a.push
     Quadrate<int> quadre1;
     quadre1.Center = {0, 0};
     quadre1.Side = 4;
@@ -20,13 +18,13 @@ int main() {
 
     Rectangle<int> rectangle1;
     rectangle1.Center = {25, 100};
-    rectangle1.Side1 = 25;
-    rectangle1.Side2 = 100;
+    rectangle1.Length = 25;
+    rectangle1.Width = 100;
 
     Rectangle<double> rectangle2;
     rectangle2.Center = {45.85, 36.9};
-    rectangle2.Side1 = 56.7;
-    rectangle2.Side2 = 1003.3;
+    rectangle2.Length = 56.7;
+    rectangle2.Width = 1003.3;
 
     Trapeze<int> trapeze1;
     trapeze1.Center = {1000, -86};
@@ -42,11 +40,8 @@ int main() {
 
     std::tuple<decltype(quadre1), decltype(quadre2), decltype(rectangle1), decltype(rectangle2), decltype(trapeze1), decltype(trapeze2)> 
     tuple {quadre1, quadre2, rectangle1, rectangle2, trapeze1, trapeze2};
-    print_tuple<decltype(tuple),0>(tuple);
 
-    Quadrate<int> qr;
-    qr.Center = {0, 0};
-    qr.Side = 5;
+    print_tuple<decltype(tuple),0>(tuple);
 
     std::cout << "Total square of tuple: " << tuple_square<decltype(tuple),0>(tuple) << std::endl;
 }
