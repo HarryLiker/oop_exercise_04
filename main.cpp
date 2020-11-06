@@ -1,8 +1,9 @@
 #include <iostream>
 #include <tuple>
-#include <string>
-#include "templates.hpp"
-#include <cmath>
+#include "quadrate.hpp"
+#include "rectangle.hpp"
+#include "trapeze.hpp"
+#include "tuple.hpp"
 
 using namespace std;
 
@@ -47,12 +48,5 @@ int main() {
     qr.Center = {0, 0};
     qr.Side = 5;
 
-    //square(qr);
-    std::cout << square(trapeze2);
     std::cout << "Total square of tuple: " << tuple_square<decltype(tuple),0>(tuple) << std::endl;
-
-    //print(10, 20);
-    //print(100, 200, 300);
-    //print<int, double, int>(1, 2.0, 3);
-    //print("first", 2, "third", 3.14159);
 }
