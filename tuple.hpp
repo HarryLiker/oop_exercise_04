@@ -17,9 +17,9 @@ typename std::enable_if<(index < std::tuple_size<T>::value), void>::type print_t
 
 // The whole square of tuple
 template <class T, size_t index = 0>
-double tuple_square(T& tuple) {
+long double tuple_square(T& tuple) {
     if constexpr (index < std::tuple_size<T>::value) {
-        return (double)square(std::get<index>(tuple)) + tuple_square<T, index + 1>(tuple);
+        return (long double)square(std::get<index>(tuple)) + tuple_square<T, index + 1>(tuple);
     }
     else {
         return 0;
